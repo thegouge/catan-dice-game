@@ -8,6 +8,10 @@ import { BuildingCostsComponent } from "./components/building-costs/building-cos
 import { ScoreCardComponent } from "./components/score-card/score-card.component";
 import { IslandMapComponent } from './components/island-map/island-map.component';
 import { DiceBoxComponent } from './components/dice-box/dice-box.component';
+import { OpeningFormComponent } from './components/opening-form/opening-form.component';
+import { VictoryScreenComponent } from './components/victory-screen/victory-screen.component';
+import { OtherScoresComponent } from './components/other-scores/other-scores.component';
+import { PlayerComponent } from './components/player/player.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { DiceBoxComponent } from './components/dice-box/dice-box.component';
     BuildingCostsComponent,
     ScoreCardComponent,
     IslandMapComponent,
-    DiceBoxComponent
+    DiceBoxComponent,
+    OpeningFormComponent,
+    VictoryScreenComponent,
+    OtherScoresComponent,
+    PlayerComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
