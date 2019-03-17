@@ -1,0 +1,9 @@
+.component {
+  display: flex;
+}
+.dice {
+  width: 100px;
+}
+.selected {
+  background: red;
+}

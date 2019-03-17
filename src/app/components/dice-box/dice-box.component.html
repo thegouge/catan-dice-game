@@ -1,3 +1,10 @@
-<p>
-  dice-box works!
-</p>
+<div class="component">
+  <div
+    [ngClass]="die.selected ? 'selected dice' : 'dice'"
+    (click)="toggleSelect(die.id)"
+    *ngFor="let die of dice"
+  >
+    {{ die.resource }}
+  </div>
+  <button id="roll" (click)="rollDice()">Roll!</button>
+</div>
