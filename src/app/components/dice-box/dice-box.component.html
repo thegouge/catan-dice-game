@@ -1,10 +1,19 @@
 <div class="component">
-  <div
-    [ngClass]="die.selected ? 'selected dice' : 'dice'"
-    (click)="toggleSelect(die.id)"
-    *ngFor="let die of dice"
-  >
-    {{ die.resource }}
+  <div id="dice-list">
+    <div
+      [ngClass]="die.selected ? 'selected die' : 'die'"
+      (click)="toggleSelect(die.id)"
+      *ngFor="let die of dice"
+    >
+      {{ die.resource }}
+    </div>
   </div>
-  <button id="roll" (click)="rollDice()">Roll!</button>
+  <br />
+  <div id="toolbox" *ngIf="rolls > 0">
+    <button id="roll" (click)="rollDice()">Roll!</button>
+    <ng-template [ngIf]="rolls < 3">
+      <button id="build" (click)="endRolling()">Start Building!</button>
+      <p>Rolls Left: {{ rolls }}</p>
+    </ng-template>
+  </div>
 </div>

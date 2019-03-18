@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {Die} from "../../models/die";
+import {Die} from "../../models/Die";
 
 @Component({
   selector: "app-dice-box",
@@ -10,11 +10,10 @@ export class DiceBoxComponent implements OnInit {
   dice: Die[];
   rolls: number;
 
-  constructor() {
-    this.rolls = 3;
-  }
+  constructor() {}
 
   ngOnInit() {
+    this.rolls = 3;
     this.dice = [
       new Die(0),
       new Die(1),
@@ -36,5 +35,9 @@ export class DiceBoxComponent implements OnInit {
 
   toggleSelect(id: number) {
     this.dice[id].selected = !this.dice[id].selected;
+  }
+
+  endRolling() {
+    this.rolls = 0;
   }
 }

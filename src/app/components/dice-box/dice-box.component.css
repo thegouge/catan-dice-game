@@ -1,9 +1,17 @@
 .component {
   display: flex;
+  background: grey;
 }
-.dice {
+#dice-list {
+  display: flex;
+}
+.die {
   width: 100px;
 }
 .selected {
   background: red;
+}
+#toolbox {
+  display: flex;
+  justify-content: space-around;
 }
