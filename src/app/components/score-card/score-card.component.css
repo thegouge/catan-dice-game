@@ -1,0 +1,103 @@
+#score-card {
+  height: 250px;
+  width: 450px;
+  padding: 10px;
+  margin: auto;
+  box-sizing: border-box;
+  text-align: center;
+  background: lightblue;
+  display: grid;
+  grid-template-areas:
+    "a b c d e"
+    ". . . . f"
+    "k j i h g"
+    "l . . . ."
+    "m n o p p";
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(5, 20%);
+  place-content: center;
+}
+
+.round-box {
+  border: 1px solid black;
+  padding: 10px 0;
+}
+
+.round-1 {
+  grid-area: a;
+  border-right: none;
+}
+
+.round-2 {
+  grid-area: b;
+  border-right: none;
+}
+
+.round-3 {
+  grid-area: c;
+  border-right: none;
+}
+
+.round-4 {
+  grid-area: d;
+  border-right: none;
+}
+
+.round-5 {
+  grid-area: e;
+  border-bottom: none;
+}
+
+.round-6 {
+  grid-area: f;
+  border-bottom: none;
+}
+
+.round-7 {
+  grid-area: g;
+  border-left: none;
+}
+
+.round-8 {
+  grid-area: h;
+  border-left: none;
+}
+
+.round-9 {
+  grid-area: i;
+  border-left: none;
+}
+
+.round-10 {
+  grid-area: j;
+  border-left: none;
+}
+
+.round-11 {
+  grid-area: k;
+  border-bottom: none;
+}
+
+.round-12 {
+  grid-area: l;
+  border-bottom: none;
+}
+
+.round-13 {
+  grid-area: m;
+  border-right: none;
+}
+
+.round-14 {
+  grid-area: n;
+  border-right: none;
+}
+
+.round-15 {
+  grid-area: o;
+}
+
+.total {
+  grid-area: p;
+  border-left: none;
+}
