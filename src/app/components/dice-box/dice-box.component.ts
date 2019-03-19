@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, Input, EventEmitter, Output} from "@angular/core";
 import {Die} from "../../models/Die";
 
 @Component({
@@ -7,21 +7,14 @@ import {Die} from "../../models/Die";
   styleUrls: ["./dice-box.component.css"]
 })
 export class DiceBoxComponent implements OnInit {
-  dice: Die[];
+  @Input() dice: Die[];
+  @Output() finishedRolling: EventEmitter<string[]> = new EventEmitter();
   rolls: number;
 
   constructor() {}
 
   ngOnInit() {
     this.rolls = 3;
-    this.dice = [
-      new Die(0),
-      new Die(1),
-      new Die(2),
-      new Die(3),
-      new Die(4),
-      new Die(5)
-    ];
   }
 
   rollDice() {
@@ -30,7 +23,11 @@ export class DiceBoxComponent implements OnInit {
       .forEach((die) => {
         die.rollResource();
       });
-    this.rolls--;
+    if (this.rolls === 1) {
+      this.endRolling();
+    } else {
+      this.rolls--;
+    }
   }
 
   toggleSelect(id: number) {
@@ -39,5 +36,6 @@ export class DiceBoxComponent implements OnInit {
 
   endRolling() {
     this.rolls = 0;
+    this.finishedRolling.emit(this.dice.map((die: Die) => die.resource));
   }
 }

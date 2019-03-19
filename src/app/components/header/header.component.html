@@ -1,5 +1,6 @@
-<div class="component">
+<header>
+  <h2 id="name">{{ playerName }}</h2>
   <app-building-costs></app-building-costs>
-  <app-score-card></app-score-card>
+  <app-score-card [rounds]="rounds"></app-score-card>
   <app-other-scores></app-other-scores>
-</div>
+</header>

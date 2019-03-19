@@ -1,5 +1,8 @@
 <div>
-  <app-header></app-header>
+  <app-header [rounds]="rounds"></app-header>
   <app-island-map></app-island-map>
-  <app-dice-box></app-dice-box>
+  <app-dice-box
+    [dice]="dice"
+    (finishedRolling)="gatherResources($event)"
+  ></app-dice-box>
 </div>

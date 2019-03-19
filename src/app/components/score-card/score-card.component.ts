@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, Input} from "@angular/core";
 import {Round} from "../../models/Round";
 
 @Component({
@@ -7,13 +7,9 @@ import {Round} from "../../models/Round";
   styleUrls: ["./score-card.component.css"]
 })
 export class ScoreCardComponent implements OnInit {
-  rounds: Round[] = [];
+  @Input() rounds: Round[];
 
-  constructor() {
-    for (let i = 1; i < 17; i++) {
-      this.rounds.push(new Round(i));
-    }
-  }
+  constructor() {}
 
   ngOnInit() {}
 }
