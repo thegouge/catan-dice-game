@@ -1,0 +1,29 @@
+:root {
+  --build-color: lightblue;
+}
+
+#island-map {
+  background: greenyellow;
+}
+
+.start,
+.road,
+.settlement,
+.city,
+.soldier {
+  width: 50px;
+  height: 50px;
+  background: white;
+}
+
+.start:hover,
+.road:hover,
+.settlement:hover,
+.city:hover,
+.soldier:hover {
+  background: var(--build-color);
+}
+
+.built {
+  background: blue;
+}

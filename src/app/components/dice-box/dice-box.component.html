@@ -9,11 +9,14 @@
     </div>
   </div>
   <br />
-  <div id="toolbox" *ngIf="rolls > 0">
+  <div id="toolbox" *ngIf="rolls > 0; else elseblock">
     <button id="roll" (click)="rollDice()">Roll!</button>
     <ng-template [ngIf]="rolls < 3">
       <button id="build" (click)="endRolling()">Start Building!</button>
       <p>Rolls Left: {{ rolls }}</p>
     </ng-template>
   </div>
+  <ng-template #elseblock>
+    <button id="passTurn" (click)="endTurn()">End Turn</button>
+  </ng-template>
 </div>
