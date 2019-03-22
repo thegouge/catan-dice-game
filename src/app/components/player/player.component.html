@@ -1,8 +1,9 @@
 <div>
   <app-header [rounds]="rounds"></app-header>
-  <app-island-map></app-island-map>
+  <app-island-map (scoreBuilding)="scoreBuilding($event)"></app-island-map>
   <app-dice-box
     [dice]="dice"
     (finishedRolling)="gatherResources($event)"
+    (finishTurn)="endRound()"
   ></app-dice-box>
 </div>

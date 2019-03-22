@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, Output, EventEmitter} from "@angular/core";
 
 import {Building} from "../../models/Building";
 
@@ -8,6 +8,8 @@ import {Building} from "../../models/Building";
   styleUrls: ["./island-map.component.css"]
 })
 export class IslandMapComponent implements OnInit {
+  @Output() scoreBuilding: EventEmitter<number> = new EventEmitter();
+
   buildingList: Building[];
 
   constructor() {
@@ -49,4 +51,9 @@ export class IslandMapComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  build(id) {
+    this.buildingList[id].build();
+    this.scoreBuilding.emit(this.buildingList[id].pointValue);
+  }
 }

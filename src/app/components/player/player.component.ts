@@ -12,6 +12,7 @@ import {ResourcePool} from "../../models/ResourcePool";
 export class PlayerComponent implements OnInit {
   dice: Die[];
   rounds: Round[] = [];
+  currentRoundIndex = 0;
   currentResources: ResourcePool;
 
   constructor() {
@@ -45,5 +46,13 @@ export class PlayerComponent implements OnInit {
       city: wheat >= 2 && ore >= 3
     };
     console.log(this.currentResources);
+  }
+
+  scoreBuilding(buildingScore: number) {
+    this.rounds[this.currentRoundIndex].score += buildingScore;
+  }
+
+  endRound() {
+    this.currentRoundIndex++;
   }
 }

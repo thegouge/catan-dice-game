@@ -9,6 +9,7 @@ import {Die} from "../../models/Die";
 export class DiceBoxComponent implements OnInit {
   @Input() dice: Die[];
   @Output() finishedRolling: EventEmitter<string[]> = new EventEmitter();
+  @Output() finishTurn: EventEmitter<string> = new EventEmitter();
 
   rolls: number;
 
@@ -40,5 +41,15 @@ export class DiceBoxComponent implements OnInit {
     this.finishedRolling.emit(this.dice.map((die: Die) => die.resource));
   }
 
-  endTurn() {}
+  endTurn() {
+    this.finishTurn.emit();
+    this.reset();
+  }
+
+  reset() {
+    this.rolls = 3;
+    this.dice = this.dice.map((die) => {
+      return new Die(die.id);
+    });
+  }
 }

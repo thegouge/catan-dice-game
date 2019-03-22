@@ -3,7 +3,7 @@
     <div
       [ngClass]="building.built ? building.type + ' built' : building.type"
       [attr.id]="building.id"
-      (click)="building.build()"
+      (click)="build(building.id)"
     >
       {{ building.type }}: {{ building.pointValue }}
     </div>
