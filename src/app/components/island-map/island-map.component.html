@@ -1,11 +1,10 @@
 <div id="island-map">
-  <div *ngFor="let building of buildingList">
-    <div
-      [ngClass]="building.built ? building.type + ' built' : building.type"
-      [attr.id]="building.id"
-      (click)="build(building.id)"
-    >
-      {{ building.type }}: {{ building.pointValue }}
-    </div>
+  <div
+    *ngFor="let building of buildingList"
+    [ngClass]="building.built ? building.type + ' built' : building.type"
+    [attr.id]="building.id"
+    (click)="build(building.id)"
+  >
+    {{ building.pointValue }}
   </div>
 </div>

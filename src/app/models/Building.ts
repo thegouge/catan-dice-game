@@ -6,7 +6,7 @@ export class Building {
     public type: string,
     public pointValue: number
   ) {
-    this.built = false;
+    this.built = type === "start";
   }
 
   build() {

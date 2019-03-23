@@ -1,9 +1,40 @@
-:root {
-  --build-color: lightblue;
-}
-
 #island-map {
   background: greenyellow;
+  --build-color: lightblue;
+
+  --road-height: 20px;
+  --road-width: calc(var(--road-height) * 6);
+
+  --settlement-square: 30px;
+}
+
+.hexagon {
+  width: 100px;
+  height: 55px;
+  background: green;
+  position: relative;
+}
+.hexagon:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 25px solid green;
+}
+.hexagon:after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 25px solid green;
 }
 
 .start,
@@ -14,6 +45,7 @@
   width: 50px;
   height: 50px;
   background: white;
+  text-align: center;
 }
 
 .start:hover,
@@ -21,9 +53,40 @@
 .settlement:hover,
 .city:hover,
 .soldier:hover {
-  background: var(--build-color);
+  background-color: var(--build-color);
 }
 
 .built {
   background: blue;
+}
+
+.start,
+.road {
+  height: var(--road-height);
+  width: var(--road-width);
+}
+
+.start {
+  transform: rotate(45deg);
+}
+
+.settlement {
+  background: white;
+  display: inline-block;
+  height: var(--settlement-square);
+  width: var(--settlement-square);
+  margin-left: 20px;
+  margin-top: calc(var(--settlement-square) / 2);
+  position: relative;
+}
+.settlement:before {
+  border-bottom: calc(var(--settlement-square) / 2) solid white;
+  border-left: calc(var(--settlement-square) / 1.5) solid transparent;
+  border-right: calc(var(--settlement-square) / 1.5) solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: calc(var(--settlement-square) / -6.5);
+  top: calc(var(--settlement-square) / -2.3);
 }
