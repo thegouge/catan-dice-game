@@ -2,9 +2,20 @@
   <div
     *ngFor="let building of buildingList"
     [ngClass]="building.built ? building.type + ' built' : building.type"
-    [attr.id]="building.id"
+    [attr.id]="'building-' + building.id"
     (click)="build(building.id)"
   >
-    {{ building.pointValue }}
+    <ng-template *ngIf="building.pointValue; then thenblock; else elseblock">
+    </ng-template>
+    <ng-template #thenblock>
+      <div class="building-text">
+        {{ building.pointValue }}
+      </div>
+    </ng-template>
+    <ng-template #elseblock>
+      <div class="building-text">
+        &darr;
+      </div>
+    </ng-template>
   </div>
 </div>

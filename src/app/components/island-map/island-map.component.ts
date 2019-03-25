@@ -5,7 +5,7 @@ import {Building} from "../../models/Building";
 @Component({
   selector: "app-island-map",
   templateUrl: "./island-map.component.html",
-  styleUrls: ["./island-map.component.css"]
+  styleUrls: ["./island-map.component.css", "./positioning.css"]
 })
 export class IslandMapComponent implements OnInit {
   @Output() scoreBuilding: EventEmitter<number> = new EventEmitter();
