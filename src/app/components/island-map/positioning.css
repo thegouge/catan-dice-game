@@ -1,117 +1,183 @@
 /* STARTING ROAD */
 #building-0 {
   background: black;
-  transform: rotate(-45deg);
+  transform: rotate(-30deg);
+  left: 243px;
+  top: 149px;
 }
 
 #building-1 {
+  left: 277px;
+  top: 155px;
 }
 
 #building-2 {
-  transform: rotate(45deg);
+  transform: rotate(30deg);
+  left: 242px;
+  top: 175px;
 }
 
 #building-3 {
   transform: rotate(-90deg);
+  left: 143px;
+  top: 151px;
 }
 
 #building-4 {
+  left: 40px;
+  top: 86px;
 }
 
 #building-5 {
-  transform: rotate(-45deg);
+  transform: rotate(-30deg);
+  left: 239px;
+  top: 82px;
 }
 
 #building-6 {
+  left: 273px;
+  top: 96px;
 }
 
 #building-7 {
-  transform: rotate(45deg);
+  transform: rotate(30deg);
+  left: 237px;
+  top: 111px;
 }
 
 #building-8 {
   transform: rotate(-90deg);
+  top: 85px;
+  left: 137px;
 }
 
 #building-9 {
+  left: 32px;
+  top: 24px;
 }
 
 #building-10 {
-  transform: rotate(-45deg);
+  transform: rotate(-30deg);
+  top: 13px;
+  left: 236px;
 }
 
 #building-11 {
+  left: 279px;
+  top: 28px;
 }
 
 #building-12 {
   transform: rotate(-90deg);
+  left: 359px;
+  top: -33px;
 }
 
 #building-13 {
-  transform: rotate(45deg);
+  transform: rotate(30deg);
+  left: 457px;
+  top: -163px;
 }
 
 #building-14 {
+  left: 498px;
+  top: -296px;
 }
 
 #building-15 {
-  transform: rotate(-45deg);
+  transform: rotate(-30deg);
+  top: -434px;
+  left: 457px;
 }
 
 #building-16 {
-  transform: rotate(45deg);
+  transform: rotate(30deg);
+  left: 454px;
+  top: -619px;
 }
 
 #building-17 {
+  left: 489px;
+  top: -748px;
 }
 
 #building-18 {
-  transform: rotate(-45deg);
+  transform: rotate(-30deg);
+  left: 458px;
+  top: -888px;
 }
 
 #building-19 {
-  transform: rotate(45deg);
+  transform: rotate(30deg);
+  left: 461px;
+  top: -1069px;
 }
 
 #building-20 {
+  left: 496px;
+  top: -1199px;
 }
 
 #building-21 {
   transform: rotate(-90deg);
+  top: -759px;
+  left: 580px;
 }
 
 #building-22 {
-  transform: rotate(45deg);
+  transform: rotate(30deg);
+  left: 668px;
+  top: -887px;
 }
 
 #building-23 {
+  top: -1018px;
+  left: 684px;
 }
 
 #building-24 {
-  transform: rotate(-45deg);
+  transform: rotate(-30deg);
+  left: 670px;
+  top: -1156px;
 }
 
 #building-25 {
-  transform: rotate(45deg);
+  transform: rotate(30deg);
+  left: 668px;
+  top: -1340px;
 }
 
 #building-26 {
+  top: -1470px;
+  left: 683px;
 }
 
 #building-27 {
+  left: 144px;
+  top: -1581px;
 }
 
 #building-28 {
+  left: 141px;
+  top: -1379px;
 }
 
 #building-29 {
+  left: 352px;
+  top: -1293px;
 }
 
 #building-30 {
+  left: 571px;
+  top: -1461px;
 }
 
 #building-31 {
+  left: 567px;
+  top: -1754px;
 }
 
 #building-32 {
+  left: 358px;
+  top: -1928px;
 }
