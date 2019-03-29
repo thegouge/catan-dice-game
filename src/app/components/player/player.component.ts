@@ -4,6 +4,7 @@ import {Die} from "../../models/Die";
 import {Round} from "../../models/Round";
 import {ResourcePool} from "../../models/ResourcePool";
 import {Building} from "../../models/Building";
+import {Resource} from "./../../models/Resource";
 
 @Component({
   selector: "app-player",
@@ -16,6 +17,7 @@ export class PlayerComponent implements OnInit {
   currentRoundIndex = 0;
   currentResources: ResourcePool;
   buildingList: Building[];
+  resourceList: Resource[];
 
   constructor() {
     this.dice = [
@@ -68,6 +70,15 @@ export class PlayerComponent implements OnInit {
       new Building(31, "soldier", 5),
       new Building(32, "soldier", 6)
     ];
+
+    this.resourceList = [
+      new Resource("wood"),
+      new Resource("brick"),
+      new Resource("wool"),
+      new Resource("wheat"),
+      new Resource("ore"),
+      new Resource("gold")
+    ];
   }
 
   ngOnInit() {}
@@ -77,6 +88,7 @@ export class PlayerComponent implements OnInit {
       this.currentResources[rolledResource]++;
     });
     const {wood, brick, wool, wheat, ore, gold} = this.currentResources;
+    const wild = Math.floor(gold / 2);
     this.currentResources.structures = {
       road: wood >= 1 && brick >= 1,
       soldier: wool >= 1 && wheat >= 1 && ore >= 1,
