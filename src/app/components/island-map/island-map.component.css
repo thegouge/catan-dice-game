@@ -57,7 +57,7 @@
 .city,
 .soldier {
   position: relative;
-  background: rgb(109, 109, 109);
+  background: white;
   text-align: center;
 }
 
@@ -174,6 +174,13 @@
   top: 25%;
 }
 
+.resource {
+  position: relative;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+}
+
 .built,
 .built:hover,
 .built:after,
@@ -185,4 +192,9 @@
 .built:before,
 .built:hover:before {
   border-bottom-color: var(--built-color);
+}
+
+.built.soldier:before,
+.built.soldier:hover:before {
+  background-color: var(--built-color);
 }
