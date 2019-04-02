@@ -1,16 +1,33 @@
 .component {
   display: flex;
-  background: grey;
+  background: rgb(228, 228, 228);
 }
+
 #dice-list {
   display: flex;
 }
+
 .die {
-  width: 100px;
+  width: 75px;
+  height: 75px;
+  margin: 5px;
+  padding: 5px;
 }
+
+.die-picture {
+  width: 75px;
+  height: 75px;
+  border-radius: 20%;
+}
+
+#gold-icon {
+  background-color: var(--gold-color);
+}
+
 .selected {
   background: red;
 }
+
 #toolbox {
   display: flex;
   justify-content: space-around;

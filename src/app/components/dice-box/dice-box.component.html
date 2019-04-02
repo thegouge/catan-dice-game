@@ -6,7 +6,12 @@
       *ngFor="let die of dice"
     >
       <ng-template [ngIf]="die.resource">
-        <img [src]="die.resource.imageRoute" [alt]="die.resource.name" />
+        <img
+          class="die-picture"
+          [attr.id]="die.resource.name + '-icon'"
+          [src]="die.resource.imageRoute"
+          [alt]="die.resource.name"
+        />
       </ng-template>
     </div>
   </div>

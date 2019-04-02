@@ -172,46 +172,46 @@
 
 #building-30 {
   left: 571px;
-  top: -1466px;
+  top: -1467px;
 }
 
 #building-31 {
-  top: -1761px;
+  top: -1762px;
   left: 568px;
 }
 
 #building-32 {
-  left: 358px;
-  top: -1936px;
+  top: -1937px;
+  left: 359px;
 }
 
 #wood-circle {
-  left: 542px;
-  top: -1560px;
+  left: 539px;
+  top: -1561px;
 }
 
 #brick-circle {
-  left: 455px;
-  top: -1811px;
+  left: 441px;
+  top: -1812px;
 }
 
 #wool-circle {
-  left: 152px;
-  top: -1438px;
+  left: 130px;
+  top: -1440px;
 }
 
 #wheat-circle {
-  left: -143px;
-  top: -1569px;
+  left: -177px;
+  top: -1571px;
 }
 
 #ore-circle {
-  left: -224px;
+  left: -270px;
   top: -1817px;
 }
 
 #gold-circle {
-  background-color: rgb(221, 181, 57);
-  left: -95px;
+  background-color: var(--gold-color);
+  left: -149px;
   top: -1942px;
 }
