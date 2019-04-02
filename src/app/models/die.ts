@@ -1,39 +1,40 @@
+import {Resource} from "./Resource";
+
 // tslint:disable-next-line: class-name
 export class Die {
   constructor(id: number) {
     this.id = id;
   }
   id: number;
-  resource: string;
+  resource: Resource;
   selected: boolean;
   rollResource() {
     switch (Math.round(Math.random() * 5)) {
       case 0:
-        this.resource = "gold";
+        this.resource = new Resource("gold");
         break;
 
       case 1:
-        this.resource = "wood";
+        this.resource = new Resource("wood");
         break;
 
       case 2:
-        this.resource = "brick";
+        this.resource = new Resource("brick");
         break;
 
       case 3:
-        this.resource = "wool";
+        this.resource = new Resource("wool");
         break;
 
       case 4:
-        this.resource = "wheat";
+        this.resource = new Resource("wheat");
         break;
 
       case 5:
-        this.resource = "ore";
+        this.resource = new Resource("ore");
         break;
 
       default:
-        this.resource = "";
         break;
     }
   }

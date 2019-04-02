@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from "@angular/core";
 import {Round} from "../../models/Round";
+import {Resource} from "src/app/models/Resource";
 
 @Component({
   selector: "app-header",
@@ -8,6 +9,7 @@ import {Round} from "../../models/Round";
 })
 export class HeaderComponent implements OnInit {
   @Input() rounds: Round[];
+  @Input() resourceList: Resource[];
 
   playerName = "Alex";
 

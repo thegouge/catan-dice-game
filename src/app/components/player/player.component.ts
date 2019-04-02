@@ -1,6 +1,5 @@
 import {Component, OnInit} from "@angular/core";
 
-import {Die} from "../../models/Die";
 import {Round} from "../../models/Round";
 import {ResourcePool} from "../../models/ResourcePool";
 import {Building} from "../../models/Building";
@@ -12,7 +11,6 @@ import {Resource} from "./../../models/Resource";
   styleUrls: ["./player.component.css"]
 })
 export class PlayerComponent implements OnInit {
-  dice: Die[];
   rounds: Round[] = [];
   currentRoundIndex = 0;
   currentResources: ResourcePool;
@@ -20,15 +18,6 @@ export class PlayerComponent implements OnInit {
   resourceList: Resource[];
 
   constructor() {
-    this.dice = [
-      new Die(0),
-      new Die(1),
-      new Die(2),
-      new Die(3),
-      new Die(4),
-      new Die(5)
-    ];
-
     for (let i = 1; i < 17; i++) {
       this.rounds.push(new Round(i));
     }
@@ -81,7 +70,9 @@ export class PlayerComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.resourceList);
+  }
 
   gatherResources(resourceList: string[]) {
     resourceList.forEach((rolledResource: string) => {

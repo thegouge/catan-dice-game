@@ -1,6 +1,7 @@
 import {Component, OnInit, Output, EventEmitter, Input} from "@angular/core";
 
-import {Building} from "../../models/Building";
+import {Building} from "src/app/models/Building";
+import {Resource} from "src/app/models/Resource";
 
 @Component({
   selector: "app-island-map",
@@ -8,6 +9,7 @@ import {Building} from "../../models/Building";
   styleUrls: ["./island-map.component.css", "./positioning.css"]
 })
 export class IslandMapComponent implements OnInit {
+  @Input() resourceList: Resource[];
   @Input() buildingList: Building[];
 
   @Output() scoreBuilding: EventEmitter<number> = new EventEmitter();

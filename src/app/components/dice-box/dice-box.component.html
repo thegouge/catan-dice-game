@@ -5,7 +5,9 @@
       (click)="toggleSelect(die.id)"
       *ngFor="let die of dice"
     >
-      {{ die.resource }}
+      <ng-template [ngIf]="die.resource">
+        <img [src]="die.resource.imageRoute" [alt]="die.resource.name" />
+      </ng-template>
     </div>
   </div>
   <br />

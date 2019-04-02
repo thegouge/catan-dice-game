@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, EventEmitter, Output} from "@angular/core";
-import {Die} from "../../models/Die";
+import {Die} from "src/app/models/Die";
+import {Resource} from "src/app/models/Resource";
 
 @Component({
   selector: "app-dice-box",
@@ -7,16 +8,26 @@ import {Die} from "../../models/Die";
   styleUrls: ["./dice-box.component.css"]
 })
 export class DiceBoxComponent implements OnInit {
-  @Input() dice: Die[];
+  @Input() resourceList: Resource[];
+
   @Output() finishedRolling: EventEmitter<string[]> = new EventEmitter();
   @Output() finishTurn: EventEmitter<string> = new EventEmitter();
 
+  dice: Die[];
   rolls: number;
 
   constructor() {}
 
   ngOnInit() {
     this.rolls = 3;
+    this.dice = [
+      new Die(0),
+      new Die(1),
+      new Die(2),
+      new Die(3),
+      new Die(4),
+      new Die(5)
+    ];
   }
 
   rollDice() {
@@ -25,6 +36,8 @@ export class DiceBoxComponent implements OnInit {
       .forEach((die) => {
         die.rollResource();
       });
+
+    console.log(this.dice);
     if (this.rolls === 1) {
       this.endRolling();
     } else {
@@ -38,7 +51,7 @@ export class DiceBoxComponent implements OnInit {
 
   endRolling() {
     this.rolls = 0;
-    this.finishedRolling.emit(this.dice.map((die: Die) => die.resource));
+    this.finishedRolling.emit(this.dice.map((die: Die) => die.resource.name));
   }
 
   endTurn() {

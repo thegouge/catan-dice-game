@@ -4,7 +4,7 @@
 
   width: var(--map-width);
   height: var(--map-height);
-  background: url("../../../assets/island-map.png") lightgreen;
+  background: url("src/assets/island-map.png") lightgreen;
   background-size: cover;
 
   --hover-color: lightblue;
