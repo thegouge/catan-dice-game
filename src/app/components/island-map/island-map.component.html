@@ -19,9 +19,10 @@
     </ng-template>
   </div>
   <img
+    *ngFor="let resource of resourceList"
     class="resource"
-    id="ore-circle"
-    src="../../../assets/ore.png"
-    alt="Ore"
+    [attr.id]="resource.name + '-circle'"
+    [src]="resource.imageRoute"
+    [alt]="resource.name + ' circle'"
   />
 </div>

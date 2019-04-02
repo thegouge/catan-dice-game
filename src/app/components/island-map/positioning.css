@@ -185,7 +185,33 @@
   top: -1936px;
 }
 
+#wood-circle {
+  left: 542px;
+  top: -1560px;
+}
+
+#brick-circle {
+  left: 455px;
+  top: -1811px;
+}
+
+#wool-circle {
+  left: 152px;
+  top: -1438px;
+}
+
+#wheat-circle {
+  left: -143px;
+  top: -1569px;
+}
+
 #ore-circle {
-  left: 115px;
+  left: -224px;
   top: -1817px;
+}
+
+#gold-circle {
+  background-color: rgb(221, 181, 57);
+  left: -95px;
+  top: -1942px;
 }
