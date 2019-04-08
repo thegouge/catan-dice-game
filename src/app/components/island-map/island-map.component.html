@@ -3,7 +3,7 @@
     *ngFor="let building of buildingList"
     [ngClass]="building.built ? building.type + ' built' : building.type"
     [attr.id]="'building-' + building.id"
-    (click)="build(building.id)"
+    (click)="canItBuild(building.id)"
   >
     <ng-template *ngIf="building.pointValue; then thenblock; else elseblock">
     </ng-template>

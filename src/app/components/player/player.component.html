@@ -2,6 +2,7 @@
   <app-header [rounds]="rounds" [resourceList]="resourceList"></app-header>
   <app-island-map
     [resourceList]="resourceList"
+    [currentResources]="currentResources"
     (scoreBuilding)="scoreBuilding($event)"
   ></app-island-map>
   <app-dice-box
