@@ -70,9 +70,7 @@ export class PlayerComponent implements OnInit {
     ];
   }
 
-  ngOnInit() {
-    console.log(this.resourceList);
-  }
+  ngOnInit() {}
 
   gatherResources(resourceList: string[]) {
     resourceList.forEach((rolledResource: string) => {
@@ -87,6 +85,10 @@ export class PlayerComponent implements OnInit {
       city: wheat >= 2 && ore >= 3
     };
     console.log(this.currentResources);
+  }
+
+  resetResources() {
+    this.currentResources.reset();
   }
 
   scoreBuilding(buildingScore: number) {

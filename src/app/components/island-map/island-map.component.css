@@ -59,6 +59,8 @@
   position: relative;
   background: white;
   text-align: center;
+  cursor: pointer;
+  user-select: none;
 }
 
 .road:hover,
@@ -95,7 +97,7 @@
   margin-top: calc(var(--settlement-square) / 2);
 }
 .settlement:before {
-  border-bottom: calc(var(--settlement-square) / 2) solid white;
+  border-bottom: calc(var(--settlement-square) / 1.5) solid white;
   border-left: calc(var(--settlement-square) / 1.5) solid transparent;
   border-right: calc(var(--settlement-square) / 1.5) solid transparent;
   content: "";
@@ -103,7 +105,7 @@
   width: 0;
   position: absolute;
   left: calc(var(--settlement-square) / -6.5);
-  top: calc(var(--settlement-square) / -2.3);
+  top: calc(var(--settlement-square) / -1.7);
 }
 .settlement:hover:before {
   border-bottom-color: var(--hover-color);

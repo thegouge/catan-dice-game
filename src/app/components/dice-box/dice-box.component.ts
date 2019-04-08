@@ -10,7 +10,8 @@ import {Resource} from "src/app/models/Resource";
 export class DiceBoxComponent implements OnInit {
   @Input() resourceList: Resource[];
 
-  @Output() finishedRolling: EventEmitter<string[]> = new EventEmitter();
+  @Output() rollEvent: EventEmitter<string[]> = new EventEmitter();
+  @Output() resetResources: EventEmitter<string> = new EventEmitter();
   @Output() finishTurn: EventEmitter<string> = new EventEmitter();
 
   dice: Die[];
@@ -31,18 +32,20 @@ export class DiceBoxComponent implements OnInit {
   }
 
   rollDice() {
+    this.resetResources.emit();
     this.dice
       .filter((die) => !die.selected)
       .forEach((die) => {
         die.rollResource();
       });
 
-    console.log(this.dice);
     if (this.rolls === 1) {
       this.endRolling();
     } else {
       this.rolls--;
     }
+
+    this.rollEvent.emit(this.dice.map((die: Die) => die.resource.name));
   }
 
   toggleSelect(id: number) {
@@ -51,7 +54,6 @@ export class DiceBoxComponent implements OnInit {
 
   endRolling() {
     this.rolls = 0;
-    this.finishedRolling.emit(this.dice.map((die: Die) => die.resource.name));
   }
 
   endTurn() {

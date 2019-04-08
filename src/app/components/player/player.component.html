@@ -1,4 +1,4 @@
-<div>
+<div class="player">
   <app-header [rounds]="rounds" [resourceList]="resourceList"></app-header>
   <app-island-map
     [buildingList]="buildingList"
@@ -7,7 +7,8 @@
   ></app-island-map>
   <app-dice-box
     [resourceList]="resourceList"
-    (finishedRolling)="gatherResources($event)"
+    (rollEvent)="gatherResources($event)"
+    (resetResources)="resetResources()"
     (finishTurn)="endRound()"
   ></app-dice-box>
 </div>
