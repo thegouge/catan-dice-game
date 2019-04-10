@@ -1,1 +1,11 @@
-<div id="cost-card"></div>
+<div class="cost-card" *ngFor="let cost of buildingCosts">
+  <div class="cost-box">
+    <div class="name"><div [ngClass]="cost.name"></div></div>
+    <img
+      *ngFor="let resource of cost.resources"
+      class="resource-icon"
+      [src]="'assets/' + resource + '.png'"
+      alt="resource"
+    />
+  </div>
+</div>

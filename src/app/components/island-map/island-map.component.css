@@ -1,7 +1,4 @@
 #island-map {
-  --map-height: 800px;
-  --map-width: calc(var(--map-height) * 0.93869047619);
-
   width: var(--map-width);
   height: var(--map-height);
   background: url("src/assets/island-map.png") lightgreen;
@@ -9,17 +6,6 @@
 
   --hover-color: lightblue;
   --built-color: blue;
-
-  --road-width: 25px;
-  --road-height: calc(var(--road-width) * 3);
-
-  --settlement-square: 30px;
-
-  --city-height: var(--settlement-square);
-  --city-width: calc(var(--city-height) * 2);
-
-  --soldier-width: var(--settlement-square);
-  --soldier-height: calc(var(--soldier-width) * 1.5);
 }
 
 /* .hexagon {
@@ -51,18 +37,6 @@
   border-top: 25px solid green;
 } */
 
-.start,
-.road,
-.settlement,
-.city,
-.soldier {
-  position: relative;
-  background: white;
-  text-align: center;
-  cursor: pointer;
-  user-select: none;
-}
-
 .road:hover,
 .settlement:hover,
 .city:hover,
@@ -79,34 +53,11 @@
   left: 0;
 }
 
-.start,
-.road {
-  height: var(--road-height);
-  width: var(--road-width);
-}
-
 .start .building-text,
 .road .building-text {
   top: 40%;
 }
 
-.settlement {
-  display: inline-block;
-  height: var(--settlement-square);
-  width: var(--settlement-square);
-  margin-top: calc(var(--settlement-square) / 2);
-}
-.settlement:before {
-  border-bottom: calc(var(--settlement-square) / 1.5) solid white;
-  border-left: calc(var(--settlement-square) / 1.5) solid transparent;
-  border-right: calc(var(--settlement-square) / 1.5) solid transparent;
-  content: "";
-  height: 0;
-  width: 0;
-  position: absolute;
-  left: calc(var(--settlement-square) / -6.5);
-  top: calc(var(--settlement-square) / -1.7);
-}
 .settlement:hover:before {
   border-bottom-color: var(--hover-color);
 }
@@ -114,32 +65,6 @@
   top: 20%;
 }
 
-.city {
-  display: inline-block;
-  height: var(--city-height);
-  width: var(--city-width);
-  margin-top: calc(var(--city-height) / 2);
-}
-.city:before {
-  content: "";
-  height: 0;
-  width: 0;
-  border-bottom: calc(var(--city-height) / 1.25) solid white;
-  border-left: calc(var(--city-height) / 1.25) solid transparent;
-  border-right: calc(var(--city-height) / 1.25) solid transparent;
-  position: absolute;
-  left: calc(var(--city-height) / 1.4);
-  top: calc(var(--city-height) / -1.07);
-}
-.city:after {
-  content: "";
-  height: calc(var(--city-height) / 6);
-  width: var(--city-height);
-  position: absolute;
-  bottom: calc(var(--city-height));
-  left: calc(var(--city-width) / 2);
-  background: white;
-}
 .city:hover:before {
   border-bottom-color: var(--hover-color);
 }
@@ -150,24 +75,6 @@
   top: 25%;
 }
 
-.soldier {
-  z-index: 10;
-  width: var(--soldier-width);
-  height: var(--soldier-height);
-  border-radius: calc(var(--soldier-width) / 2) / var(--soldier-width);
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.soldier:before {
-  content: "";
-  position: absolute;
-  top: calc(var(--soldier-height) / -2.5);
-  left: 0;
-  width: var(--soldier-width);
-  height: var(--soldier-width);
-  background: white;
-  border-radius: 50%;
-}
 .soldier:hover,
 .soldier:hover:before {
   background: var(--hover-color);

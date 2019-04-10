@@ -1,19 +1,21 @@
 import {Component, OnInit} from "@angular/core";
 
-import {Round} from "../../models/Round";
-import {ResourcePool} from "../../models/ResourcePool";
-import {Resource} from "./../../models/Resource";
+import {Round} from "src/app/models/Round";
+import {ResourcePool} from "src/app/models/ResourcePool";
+import {Resource} from "src/app/models/Resource";
+import {Cost} from "src/app/models/Cost";
 
 @Component({
   selector: "app-player",
   templateUrl: "./player.component.html",
-  styleUrls: ["./player.component.css"]
+  styleUrls: ["./player.component.css"],
 })
 export class PlayerComponent implements OnInit {
   rounds: Round[] = [];
   currentRoundIndex = 0;
   currentResources: ResourcePool;
   resourceList: Resource[];
+  buildingCosts: Cost[];
 
   constructor() {
     for (let i = 1; i < 17; i++) {
@@ -28,7 +30,26 @@ export class PlayerComponent implements OnInit {
       new Resource("wool"),
       new Resource("wheat"),
       new Resource("ore"),
-      new Resource("gold")
+      new Resource("gold"),
+    ];
+
+    this.buildingCosts = [
+      {
+        name: "road",
+        resources: ["wood", "brick"],
+      },
+      {
+        name: "soldier",
+        resources: ["wool", "wheat", "ore"],
+      },
+      {
+        name: "settlement",
+        resources: ["wood", "brick", "wool", "wheat"],
+      },
+      {
+        name: "city",
+        resources: ["wheat", "wheat", "ore", "ore", "ore"],
+      },
     ];
   }
 
@@ -44,7 +65,7 @@ export class PlayerComponent implements OnInit {
       road: wood >= 1 && brick >= 1,
       soldier: wool >= 1 && wheat >= 1 && ore >= 1,
       settlement: wood >= 1 && brick >= 1 && wool >= 1 && wheat >= 1,
-      city: wheat >= 2 && ore >= 3
+      city: wheat >= 2 && ore >= 3,
     };
     console.log(this.currentResources);
   }

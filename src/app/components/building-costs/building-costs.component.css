@@ -1,0 +1,36 @@
+.cost-box {
+  display: flex;
+  margin: 10px 10px;
+}
+
+.name {
+  height: calc(var(--icon-size));
+  width: calc(var(--icon-size));
+  text-align: center;
+  border: 1px solid black;
+}
+
+.road {
+  position: relative;
+  left: 24px;
+  top: 1px;
+  transform: rotate(45deg);
+}
+
+.soldier {
+  position: relative;
+  left: 24px;
+  top: 22px;
+}
+
+.settlement {
+  position: relative;
+  left: 1px;
+  top: 13px;
+}
+
+.city {
+  position: relative;
+  left: -2px;
+  top: 19px;
+}
