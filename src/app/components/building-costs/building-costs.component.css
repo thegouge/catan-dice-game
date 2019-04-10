@@ -1,36 +1,84 @@
-.cost-box {
+.cost-card {
+  width: 100%;
+  height: 100%;
   display: flex;
-  margin: 10px 10px;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  flex-direction: column;
 }
 
-.name {
-  height: calc(var(--icon-size));
-  width: calc(var(--icon-size));
-  text-align: center;
+.cost-box {
+  display: flex;
   border: 1px solid black;
 }
 
+.name,
+.resource-icon {
+  height: calc(var(--icon-size) / 2);
+  width: calc(var(--icon-size) / 2);
+  margin-right: 5px;
+}
+
+.name {
+  background: black;
+}
+
 .road {
-  position: relative;
-  left: 24px;
+  left: 12px;
   top: 1px;
   transform: rotate(45deg);
+
+  height: calc(var(--road-height) / 2);
+  width: calc(var(--road-width) / 2);
 }
 
 .soldier {
-  position: relative;
-  left: 24px;
-  top: 22px;
+  top: 11px;
+  left: 12px;
+
+  width: calc(var(--soldier-width) / 2);
+  height: calc(var(--soldier-height) / 1.9);
+  border-radius: calc(var(--soldier-width) / 2) / var(--soldier-width);
+}
+.soldier:before {
+  top: calc(var(--soldier-height) / -5);
+  width: calc(var(--soldier-width) / 2);
+  height: calc(var(--soldier-width) / 2);
 }
 
 .settlement {
-  position: relative;
-  left: 1px;
-  top: 13px;
+  top: 0px;
+  left: 11px;
+
+  height: calc(var(--settlement-square) / 2);
+  width: calc(var(--settlement-square) / 2);
+}
+.settlement:before {
+  border-bottom: calc(var(--settlement-square) / 3) solid white;
+  border-left: calc(var(--settlement-square) / 3) solid transparent;
+  border-right: calc(var(--settlement-square) / 3) solid transparent;
+  left: calc(var(--settlement-square) / -13);
+  top: calc(var(--settlement-square) / -3.4);
 }
 
 .city {
-  position: relative;
-  left: -2px;
-  top: 19px;
+  left: 2px;
+  top: 9px;
+
+  height: calc(var(--city-height) / 2);
+  width: calc(var(--city-width) / 2);
+  margin-top: calc(var(--city-height) / 4);
+}
+.city:before {
+  border-bottom: calc(var(--city-height) / 2.5) solid white;
+  border-left: calc(var(--city-height) / 2.5) solid transparent;
+  border-right: calc(var(--city-height) / 2.5) solid transparent;
+  left: calc(var(--city-height) / 2.8);
+  top: calc(var(--city-height) / -2.14);
+}
+.city:after {
+  height: calc(var(--city-height) / 12);
+  width: calc(var(--city-height) / 2);
+  bottom: calc(var(--city-height) / 2);
+  left: calc(var(--city-width) / 4);
 }

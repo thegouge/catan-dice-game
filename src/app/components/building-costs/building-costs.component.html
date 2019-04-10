@@ -1,5 +1,5 @@
-<div class="cost-card" *ngFor="let cost of buildingCosts">
-  <div class="cost-box">
+<div class="cost-card">
+  <div class="cost-box" *ngFor="let cost of buildingCosts">
     <div class="name"><div [ngClass]="cost.name"></div></div>
     <img
       *ngFor="let resource of cost.resources"

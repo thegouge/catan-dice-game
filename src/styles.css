@@ -30,15 +30,20 @@
 .settlement,
 .city,
 .soldier {
+  background: white;
   position: relative;
   text-align: center;
   cursor: pointer;
   user-select: none;
 }
 
-.settlement {
-  background: white;
+.start,
+.road {
+  height: var(--road-height);
+  width: var(--road-width);
+}
 
+.settlement {
   display: inline-block;
   height: var(--settlement-square);
   width: var(--settlement-square);
@@ -57,8 +62,6 @@
 }
 
 .city {
-  background: white;
-
   display: inline-block;
   height: var(--city-height);
   width: var(--city-width);
@@ -86,8 +89,6 @@
 }
 
 .soldier {
-  background: white;
-
   z-index: 10;
   width: var(--soldier-width);
   height: var(--soldier-height);
@@ -104,12 +105,4 @@
   height: var(--soldier-width);
   background: white;
   border-radius: 50%;
-}
-
-.start,
-.road {
-  background: white;
-
-  height: var(--road-height);
-  width: var(--road-width);
 }

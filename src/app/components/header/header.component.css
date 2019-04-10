@@ -1,3 +1,17 @@
 header {
   background: lightgreen;
 }
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+app-building-costs,
+app-score-card {
+  padding: 10px;
+}
+
+app-building-costs {
+  width: 260px;
+}

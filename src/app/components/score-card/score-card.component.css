@@ -1,6 +1,6 @@
 #score-card {
-  height: 250px;
-  width: 450px;
+  height: 200px;
+  width: 375px;
   padding: 10px;
   margin: auto;
   box-sizing: border-box;
@@ -13,8 +13,8 @@
     "k j i h g"
     "l . . . ."
     "m n o p p";
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(5, 20%);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   place-content: center;
 }
 
