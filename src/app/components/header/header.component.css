@@ -2,16 +2,18 @@ header {
   background: lightgreen;
 }
 
-.header-content {
-  display: flex;
-  justify-content: space-between;
+header h2 {
+  margin: 0;
+  padding: 20px;
+  font-size: 30px;
 }
 
-app-building-costs,
-app-score-card {
-  padding: 10px;
+.header-content {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px;
 }
 
 app-building-costs {
-  width: 260px;
+  width: 360px;
 }

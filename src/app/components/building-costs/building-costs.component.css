@@ -1,22 +1,30 @@
 .cost-card {
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
   flex-direction: column;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
 }
 
 .cost-box {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  align-items: center;
   display: flex;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 5px;
 }
 
 .name,
 .resource-icon {
-  height: calc(var(--icon-size) / 2);
-  width: calc(var(--icon-size) / 2);
-  margin-right: 5px;
+  height: calc(var(--icon-size) / 1.5);
+  width: calc(var(--icon-size) / 1.5);
+  margin: 0 3px;
 }
 
 .name {
@@ -24,61 +32,64 @@
 }
 
 .road {
-  left: 12px;
+  left: 17px;
   top: 1px;
   transform: rotate(45deg);
 
-  height: calc(var(--road-height) / 2);
-  width: calc(var(--road-width) / 2);
+  height: calc(var(--road-height) / 1.5);
+  width: calc(var(--road-width) / 1.5);
 }
 
 .soldier {
-  top: 11px;
-  left: 12px;
+  left: 16px;
+  top: 15px;
 
-  width: calc(var(--soldier-width) / 2);
-  height: calc(var(--soldier-height) / 1.9);
-  border-radius: calc(var(--soldier-width) / 2) / var(--soldier-width);
+  width: calc(var(--soldier-width) / 1.5);
+  height: calc(var(--soldier-height) / 1.425);
+  border-radius: calc(var(--soldier-width) / 1.5) / var(--soldier-width);
+
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .soldier:before {
-  top: calc(var(--soldier-height) / -5);
-  width: calc(var(--soldier-width) / 2);
-  height: calc(var(--soldier-width) / 2);
+  top: calc(var(--soldier-height) / -3.75);
+  width: calc(var(--soldier-width) / 1.5);
+  height: calc(var(--soldier-width) / 1.5);
 }
 
 .settlement {
-  top: 0px;
-  left: 11px;
+  left: 15px;
+  top: 4px;
 
-  height: calc(var(--settlement-square) / 2);
-  width: calc(var(--settlement-square) / 2);
+  height: calc(var(--settlement-square) / 1.5);
+  width: calc(var(--settlement-square) / 1.5);
 }
 .settlement:before {
-  border-bottom: calc(var(--settlement-square) / 3) solid white;
-  border-left: calc(var(--settlement-square) / 3) solid transparent;
-  border-right: calc(var(--settlement-square) / 3) solid transparent;
-  left: calc(var(--settlement-square) / -13);
-  top: calc(var(--settlement-square) / -3.4);
+  border-bottom: calc(var(--settlement-square) / 2.25) solid white;
+  border-left: calc(var(--settlement-square) / 2.25) solid transparent;
+  border-right: calc(var(--settlement-square) / 2.25) solid transparent;
+  left: calc(var(--settlement-square) / -9.75);
+  top: calc(var(--settlement-square) / -2.55);
 }
 
 .city {
-  left: 2px;
-  top: 9px;
+  left: 3px;
+  top: 11px;
 
-  height: calc(var(--city-height) / 2);
-  width: calc(var(--city-width) / 2);
-  margin-top: calc(var(--city-height) / 4);
+  height: calc(var(--city-height) / 1.5);
+  width: calc(var(--city-width) / 1.5);
+  margin-top: calc(var(--city-height) / 3);
 }
 .city:before {
-  border-bottom: calc(var(--city-height) / 2.5) solid white;
-  border-left: calc(var(--city-height) / 2.5) solid transparent;
-  border-right: calc(var(--city-height) / 2.5) solid transparent;
-  left: calc(var(--city-height) / 2.8);
-  top: calc(var(--city-height) / -2.14);
+  border-bottom: calc(var(--city-height) / 1.875) solid white;
+  border-left: calc(var(--city-height) / 1.875) solid transparent;
+  border-right: calc(var(--city-height) / 1.875) solid transparent;
+  left: calc(var(--city-height) / 2.1);
+  top: calc(var(--city-height) / -1.605);
 }
 .city:after {
-  height: calc(var(--city-height) / 12);
-  width: calc(var(--city-height) / 2);
-  bottom: calc(var(--city-height) / 2);
-  left: calc(var(--city-width) / 4);
+  height: calc(var(--city-height) / 9);
+  width: calc(var(--city-height) / 1.5);
+  bottom: calc(var(--city-height) / 1.5);
+  left: calc(var(--city-width) / 3);
 }
