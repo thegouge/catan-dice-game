@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import {resourceList, Die} from "../exports";
+import {Die} from "../exports";
 
 import "../styles/dice-box.css";
 
@@ -76,7 +76,7 @@ const DiceBox = ({gatherResources, resetResources, finishTurn}) => {
             Roll!
           </button>
         )}
-        {rolls < 3 && (
+        {rolls < 3 && rolls > 0 && (
           <div>
             <button id="build" onClick={(e) => setRolls(0)}>
               Start Building!
@@ -85,9 +85,11 @@ const DiceBox = ({gatherResources, resetResources, finishTurn}) => {
           </div>
         )}
       </div>
-      {/* <ng-template #elseblock>
-    <button id="passTurn" (click)="endTurn()">End Turn</button>
-  </ng-template> */}
+      {rolls < 3 && (
+        <button id="passTurn" onClick={endTurn}>
+          End Turn
+        </button>
+      )}
     </div>
   );
 };
