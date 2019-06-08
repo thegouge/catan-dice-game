@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./score-card.css";
+import "../styles/score-card.css";
 
 export default function ScoreCard() {
   return (

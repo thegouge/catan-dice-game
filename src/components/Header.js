@@ -1,10 +1,10 @@
 import React from "react";
 
-import BuildingCosts from "../building-costs/BuildingCosts";
-import ScoreCard from "../score-card/ScoreCard.js";
-import OtherScores from "../other-scores/OtherScores";
+import BuildingCosts from "./BuildingCosts";
+import ScoreCard from "./ScoreCard.js";
+import OtherScores from "./OtherScores";
 
-import "./header.css";
+import "../styles/header.css";
 
 const Header = ({rounds, resourceList}) => {
   const playerName = "Alex";

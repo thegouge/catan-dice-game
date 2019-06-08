@@ -4,6 +4,7 @@ import {Resource} from "./Resource";
 export class Die {
   constructor(id: number) {
     this.id = id;
+    this.selected = false;
   }
   id: number;
   resource: Resource;

@@ -1,6 +1,6 @@
 export class Resource {
   constructor(name) {
-    this.imageRoute = `assets/${name}.png`;
+    this.imageRoute = require(`./assets/${name}.png`);
     this.name = name;
   }
 }
@@ -17,19 +17,34 @@ export const resourceList = [
 export const buildingCosts = [
   {
     name: "road",
-    resources: ["wood", "brick"],
+    resources: [new Resource("wood"), new Resource("brick")],
   },
   {
     name: "soldier",
-    resources: ["wool", "wheat", "ore"],
+    resources: [
+      new Resource("wool"),
+      new Resource("wheat"),
+      new Resource("ore"),
+    ],
   },
   {
     name: "settlement",
-    resources: ["wood", "brick", "wool", "wheat"],
+    resources: [
+      new Resource("wood"),
+      new Resource("brick"),
+      new Resource("wool"),
+      new Resource("wheat"),
+    ],
   },
   {
     name: "city",
-    resources: ["wheat", "wheat", "ore", "ore", "ore"],
+    resources: [
+      new Resource("wheat"),
+      new Resource("wheat"),
+      new Resource("ore"),
+      new Resource("ore"),
+      new Resource("ore"),
+    ],
   },
 ];
 
@@ -113,6 +128,43 @@ export class ResourcePool {
 
       case "gold":
         this.gold += modifier;
+        break;
+
+      default:
+        break;
+    }
+  }
+}
+
+export class Die {
+  constructor(id) {
+    this.id = id;
+    this.selected = false;
+  }
+  rollResource() {
+    switch (Math.round(Math.random() * 5)) {
+      case 0:
+        this.resource = new Resource("gold");
+        break;
+
+      case 1:
+        this.resource = new Resource("wood");
+        break;
+
+      case 2:
+        this.resource = new Resource("brick");
+        break;
+
+      case 3:
+        this.resource = new Resource("wool");
+        break;
+
+      case 4:
+        this.resource = new Resource("wheat");
+        break;
+
+      case 5:
+        this.resource = new Resource("ore");
         break;
 
       default:

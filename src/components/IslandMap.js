@@ -1,7 +1,7 @@
 import React from "react";
 
-import "./island-map.css";
-import "./positioning.css";
+import "../styles/island-map.css";
+import "../styles/positioning.css";
 
 export default function IslandMap() {
   // @Input() resourceList: Resource[];

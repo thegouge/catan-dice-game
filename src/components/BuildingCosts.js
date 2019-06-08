@@ -1,8 +1,8 @@
 import React from "react";
 
-import {buildingCosts} from "../../exports";
+import {buildingCosts} from "../exports";
 
-import "./building-costs.css";
+import "../styles/building-costs.css";
 
 export default function BuildingCosts() {
   const renderedCosts = buildingCosts.map((building, index) => {
@@ -10,8 +10,8 @@ export default function BuildingCosts() {
       <img
         key={index}
         className="resource-icon"
-        src={"assets/" + resource + ".png"}
-        alt={resource}
+        src={resource.imageRoute}
+        alt={resource.name}
       />
     ));
     return (

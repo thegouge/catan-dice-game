@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./victory-screen.css";
+import "../styles/victory-screen.css";
 
 export default function VictoryScreenComponent() {
   const victor = "Nobody";
