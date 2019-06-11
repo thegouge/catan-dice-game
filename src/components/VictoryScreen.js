@@ -2,15 +2,17 @@ import React from "react";
 
 import "../styles/victory-screen.css";
 
-export default function VictoryScreenComponent() {
+const VictoryScreen = () => {
   const victor = "Nobody";
 
   return (
-    <div>
-      <h1>{{victor}} has won!!</h1>
+    <div className="victory-screen">
+      <h1>{victor} has won!!</h1>
       <p>(cue the confetti)</p>
 
       <h2>Would you like to play again?</h2>
     </div>
   );
-}
+};
+
+export default VictoryScreen;

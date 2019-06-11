@@ -11,7 +11,7 @@ const Header = ({rounds, playerTotal}) => {
 
   return (
     <header>
-      <h2 id="name">{playerName}</h2>
+      <h2 className="player-name">{playerName}</h2>
       <section className="header-content">
         <BuildingCosts />
         <ScoreCard rounds={rounds} playerTotal={playerTotal} />
