@@ -91,20 +91,22 @@
   border: 5px solid white;
 }
 
-.built,
+.built {
+  background: var(--built-color) !important;
+  color: white !important;
+}
 .built:hover,
 .built:after,
 .built:hover:after {
-  background: var(--built-color);
-  color: white;
+  background: var(--built-color) !important;
 }
 
 .built:before,
 .built:hover:before {
-  border-bottom-color: var(--built-color);
+  border-bottom-color: var(--built-color) !important;
 }
 
 .built.soldier:before,
 .built.soldier:hover:before {
-  background-color: var(--built-color);
+  background-color: var(--built-color) !important;
 }

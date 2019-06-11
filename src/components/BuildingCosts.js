@@ -15,7 +15,7 @@ export default function BuildingCosts() {
       />
     ));
     return (
-      <div key={index}>
+      <div key={index} className="cost-box">
         <div className="name">
           <div className={building.name} />
         </div>
@@ -23,9 +23,5 @@ export default function BuildingCosts() {
       </div>
     );
   });
-  return (
-    <div className="cost-card">
-      <div className="cost-box">{renderedCosts}</div>
-    </div>
-  );
+  return <div className="cost-card">{renderedCosts}</div>;
 }

@@ -9,7 +9,8 @@ import "../styles/player.css";
 
 export default class Player extends React.Component {
   state = {
-    rounds: new Array(16).fill(0),
+    rounds: new Array(15).fill(0),
+    playerTotal: 0,
     currentRoundIndex: 0,
     currentResources: new ResourcePool(),
   };
@@ -46,6 +47,10 @@ export default class Player extends React.Component {
         if (i === currentRoundIndex) return (round += buildingScore);
         else return round;
       }),
+      playerTotal: rounds.reduce(
+        (runningTotal, roundScore) => runningTotal + roundScore,
+        buildingScore
+      ),
     });
   };
 
@@ -55,11 +60,11 @@ export default class Player extends React.Component {
     });
   };
   render() {
-    const {rounds, currentResources} = this.state;
+    const {rounds, playerTotal, currentResources} = this.state;
 
     return (
       <div className="player">
-        <Header rounds={rounds} resourceList={currentResources} />
+        <Header rounds={rounds} playerTotal={playerTotal} />
 
         <IslandMap
           currentResources={currentResources}

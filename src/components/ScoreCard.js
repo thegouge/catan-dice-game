@@ -2,20 +2,21 @@ import React from "react";
 
 import "../styles/score-card.css";
 
-export default function ScoreCard() {
+const ScoreCard = ({rounds, playerTotal}) => {
+  const roundBoxes = rounds.map((round, i) => {
+    return (
+      <div key={i} className={"round-box round-" + (i + 1)}>
+        {round}
+      </div>
+    );
+  });
+
   return (
     <div id="score-card">
-      <div
-      // *ngFor="let round of rounds"
-      // [ngClass]="
-      //   round.round ? 'round-box round-' + round.roundNumber : 'round-box total'
-      // "
-      >
-        {/* <ng-template [ngIf]="!round.round">Total = {{ round.score }}</ng-template>
-            <ng-template [ngIf]="round.score !== 0 && round.round">{{
-              round.score
-            }}</ng-template> */}
-      </div>
+      {roundBoxes}
+      <div className="round-box total">Total = {playerTotal}</div>
     </div>
   );
-}
+};
+
+export default ScoreCard;

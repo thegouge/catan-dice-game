@@ -6,7 +6,7 @@ import OtherScores from "./OtherScores";
 
 import "../styles/header.css";
 
-const Header = ({rounds, resourceList}) => {
+const Header = ({rounds, playerTotal}) => {
   const playerName = "Alex";
 
   return (
@@ -14,7 +14,7 @@ const Header = ({rounds, resourceList}) => {
       <h2 id="name">{playerName}</h2>
       <section className="header-content">
         <BuildingCosts />
-        <ScoreCard rounds={rounds} />
+        <ScoreCard rounds={rounds} playerTotal={playerTotal} />
       </section>
       <OtherScores />
     </header>

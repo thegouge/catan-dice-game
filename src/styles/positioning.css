@@ -1,6 +1,7 @@
 /* STARTING ROAD */
 #building-0 {
   background: black;
+  color: white;
   transform: rotate(-30deg);
   left: 243px;
   top: 149px;

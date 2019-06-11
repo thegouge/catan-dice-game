@@ -53,6 +53,7 @@ export class Building {
     this.id = id;
     this.pointValue = pointValue;
     this.built = false;
+    this.type = type;
     switch (type) {
       case "road":
         this.buildingCosts = {wood: 1, brick: 1};
@@ -80,13 +81,11 @@ export class Building {
         this.buildingCosts = {};
         break;
     }
-    if (type === "start") {
-      this.built = true;
-    }
   }
 
   build() {
     this.built = true;
+    console.log(`building a ${this.type}`);
   }
 }
 

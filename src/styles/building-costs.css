@@ -22,8 +22,8 @@
 
 .name,
 .resource-icon {
-  height: calc(var(--icon-size) / 1.5);
-  width: calc(var(--icon-size) / 1.5);
+  height: calc(var(--icon-size));
+  width: calc(var(--icon-size));
   margin: 0 3px;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .road {
-  left: 17px;
+  left: 25px;
   top: 1px;
   transform: rotate(45deg);
 
@@ -41,8 +41,8 @@
 }
 
 .soldier {
-  left: 16px;
-  top: 15px;
+  top: 22px;
+  left: 21px;
 
   width: calc(var(--soldier-width) / 1.5);
   height: calc(var(--soldier-height) / 1.425);
@@ -58,11 +58,11 @@
 }
 
 .settlement {
-  left: 15px;
-  top: 4px;
+  left: 22px;
+  top: 12px;
 
-  height: calc(var(--settlement-square) / 1.5);
-  width: calc(var(--settlement-square) / 1.5);
+  height: var(--settlement-square);
+  width: var(--settlement-square);
 }
 .settlement:before {
   border-bottom: calc(var(--settlement-square) / 2.25) solid white;
@@ -73,8 +73,8 @@
 }
 
 .city {
-  left: 3px;
-  top: 11px;
+  left: 5px;
+  top: 18px;
 
   height: calc(var(--city-height) / 1.5);
   width: calc(var(--city-width) / 1.5);
