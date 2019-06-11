@@ -2,14 +2,7 @@ import React from "react";
 
 import Player from "./components/Player";
 
-import "./App.css";
-
-const initialState = {};
-
-const Context = React.createContext(initialState);
-
-export const Provider = Context.Provider;
-export const Consumer = Context.Consumer;
+import "./styles/App.css";
 
 function App() {
   return (
