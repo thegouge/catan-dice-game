@@ -31,7 +31,6 @@ export default class Player extends React.Component {
         },
       }),
     });
-    console.log(this.state.currentResources);
   };
 
   resetResources = () => {
@@ -57,6 +56,7 @@ export default class Player extends React.Component {
   endRound = () => {
     this.setState({
       currentRoundIndex: this.state.currentRoundIndex + 1,
+      currentResources: new ResourcePool(),
     });
   };
   render() {

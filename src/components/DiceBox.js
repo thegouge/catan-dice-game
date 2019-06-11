@@ -17,7 +17,6 @@ const DiceBox = ({gatherResources, resetResources, finishTurn}) => {
   const [rolls, setRolls] = useState(3);
 
   const rollDice = () => {
-    console.log("rolling...");
     resetResources();
     dice
       .filter((die) => !die.selected)
@@ -78,9 +77,6 @@ const DiceBox = ({gatherResources, resetResources, finishTurn}) => {
         )}
         {rolls < 3 && rolls > 0 && (
           <div>
-            <button id="build" onClick={(e) => setRolls(0)}>
-              Start Building!
-            </button>
             <p>Rolls Left: {rolls}</p>
           </div>
         )}

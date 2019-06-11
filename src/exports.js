@@ -5,49 +5,6 @@ export class Resource {
   }
 }
 
-export const resourceList = [
-  new Resource("wood"),
-  new Resource("brick"),
-  new Resource("wool"),
-  new Resource("wheat"),
-  new Resource("ore"),
-  new Resource("gold"),
-];
-
-export const buildingCosts = [
-  {
-    name: "road",
-    resources: [new Resource("wood"), new Resource("brick")],
-  },
-  {
-    name: "soldier",
-    resources: [
-      new Resource("wool"),
-      new Resource("wheat"),
-      new Resource("ore"),
-    ],
-  },
-  {
-    name: "settlement",
-    resources: [
-      new Resource("wood"),
-      new Resource("brick"),
-      new Resource("wool"),
-      new Resource("wheat"),
-    ],
-  },
-  {
-    name: "city",
-    resources: [
-      new Resource("wheat"),
-      new Resource("wheat"),
-      new Resource("ore"),
-      new Resource("ore"),
-      new Resource("ore"),
-    ],
-  },
-];
-
 export class Building {
   constructor(id, type, pointValue) {
     this.id = id;
@@ -171,3 +128,46 @@ export class Die {
     }
   }
 }
+
+export const resourceList = [
+  new Resource("wood"),
+  new Resource("brick"),
+  new Resource("wool"),
+  new Resource("wheat"),
+  new Resource("ore"),
+  new Resource("gold"),
+];
+
+export const buildingCosts = [
+  {
+    name: "road",
+    resources: [new Resource("wood"), new Resource("brick")],
+  },
+  {
+    name: "soldier",
+    resources: [
+      new Resource("wool"),
+      new Resource("wheat"),
+      new Resource("ore"),
+    ],
+  },
+  {
+    name: "settlement",
+    resources: [
+      new Resource("wood"),
+      new Resource("brick"),
+      new Resource("wool"),
+      new Resource("wheat"),
+    ],
+  },
+  {
+    name: "city",
+    resources: [
+      new Resource("wheat"),
+      new Resource("wheat"),
+      new Resource("ore"),
+      new Resource("ore"),
+      new Resource("ore"),
+    ],
+  },
+];
