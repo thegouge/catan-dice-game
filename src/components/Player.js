@@ -1,5 +1,8 @@
 import React from "react";
+import {connect} from "react-redux";
+
 import {ResourcePool} from "../exports";
+import {scoreRound, endTurn} from "../redux/actions/creators";
 
 import Header from "./Header";
 import IslandMap from "./IslandMap";
@@ -7,22 +10,32 @@ import DiceBox from "./DiceBox";
 
 import "../styles/player.css";
 
-export default class Player extends React.Component {
-  state = {
-    rounds: new Array(15).fill(0),
-    playerTotal: 0,
-    currentRoundIndex: 0,
-    currentResources: new ResourcePool(),
+const mapStateToProps = (state) => {
+  return {...state};
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    scoreBuilding: (buildingScore) => dispatch(scoreRound(buildingScore)),
+    endTurn: () => dispatch(endTurn()),
   };
+};
 
-  gatherResources = (resourceList) => {
+const Player = ({
+  rounds,
+  playerTotal,
+  currentRoundIndex,
+  currentResources,
+  scoreBuilding,
+  endTurn,
+}) => {
+  const gatherResources = (resourceList) => {
     resourceList.forEach((rolledResource) => {
-      this.state.currentResources.updateResource(rolledResource, 1);
+      currentResources.updateResource(rolledResource, 1);
     });
-    const {wood, brick, wool, wheat, ore} = this.state.currentResources;
+    const {wood, brick, wool, wheat, ore} = currentResources;
     // const wild = Math.floor(currentResources.gold / 2);
     this.setState({
-      currentResources: Object.assign(this.state.currentResources, {
+      currentResources: Object.assign(currentResources, {
         structures: {
           road: wood >= 1 && brick >= 1,
           soldier: wool >= 1 && wheat >= 1 && ore >= 1,
@@ -33,50 +46,51 @@ export default class Player extends React.Component {
     });
   };
 
-  resetResources = () => {
+  const resetResources = () => {
     this.setState({
       currentResources: new ResourcePool(),
     });
   };
 
-  scoreBuilding = (buildingScore) => {
-    const {rounds, currentRoundIndex} = this.state;
-    this.setState({
-      rounds: rounds.map((round, i) => {
-        if (i === currentRoundIndex) return (round += buildingScore);
-        else return round;
-      }),
-      playerTotal: rounds.reduce(
-        (runningTotal, roundScore) => runningTotal + roundScore,
-        buildingScore
-      ),
-    });
-  };
+  // const scoreBuilding = (buildingScore) => {
+  //   this.setState({
+  //     rounds: rounds.map((round, i) => {
+  //       if (i === currentRoundIndex) return (round += buildingScore);
+  //       else return round;
+  //     }),
+  //     playerTotal: rounds.reduce(
+  //       (runningTotal, roundScore) => runningTotal + roundScore,
+  //       buildingScore
+  //     ),
+  //   });
+  // };
 
-  endRound = () => {
-    this.setState({
-      currentRoundIndex: this.state.currentRoundIndex + 1,
-      currentResources: new ResourcePool(),
-    });
-  };
-  render() {
-    const {rounds, playerTotal, currentResources} = this.state;
+  // const endRound = () => {
+  //   this.setState({
+  //     currentRoundIndex: currentRoundIndex + 1,
+  //     currentResources: new ResourcePool(),
+  //   });
+  // };
 
-    return (
-      <div className="player">
-        <Header rounds={rounds} playerTotal={playerTotal} />
+  return (
+    <div className="player">
+      <Header rounds={rounds} playerTotal={playerTotal} />
 
-        <IslandMap
-          currentResources={currentResources}
-          scoreBuilding={this.scoreBuilding}
-        />
+      <IslandMap
+        currentResources={currentResources}
+        scoreBuilding={scoreBuilding}
+      />
 
-        <DiceBox
-          gatherResources={this.gatherResources}
-          resetResources={this.resetResources}
-          finishTurn={this.endRound}
-        />
-      </div>
-    );
-  }
-}
+      <DiceBox
+        gatherResources={gatherResources}
+        resetResources={resetResources}
+        finishTurn={endTurn}
+      />
+    </div>
+  );
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Player);
