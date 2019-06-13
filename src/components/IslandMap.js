@@ -120,7 +120,7 @@ class IslandMap extends React.Component {
   render() {
     const buildings = this.state.buildingList.map((building) => {
       const points = building.pointValue ? (
-        <div className="building-text">{building.pointValue}</div>
+        <div className="building-text">{building.id}</div>
       ) : (
         <div className="building-text">&darr;</div>
       );

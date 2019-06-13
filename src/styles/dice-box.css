@@ -3,7 +3,7 @@
   background: rgb(228, 228, 228);
 }
 
-#dice-list {
+.dice-list {
   display: flex;
 }
 
@@ -22,7 +22,7 @@
   background: red;
 }
 
-#toolbox {
+.toolbox {
   display: flex;
   justify-content: space-around;
 }

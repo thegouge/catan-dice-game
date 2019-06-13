@@ -3,9 +3,11 @@
   height: var(--map-height);
   background: url("../assets/island-map.png") lightgreen;
   background-size: cover;
+  overflow: hidden;
 
   --hover-color: lightblue;
-  --built-color: blue;
+  --built-color: var(--player-color);
+  --map-resource: 85px;
 }
 
 /* .hexagon {
@@ -46,7 +48,7 @@
 
 .building-text {
   margin: auto;
-  position: absolute;
+  position: relative;
   top: 0;
   bottom: 0;
   right: 0;
@@ -84,9 +86,10 @@
 }
 
 .resource {
+  display: block;
   position: relative;
-  width: 85px;
-  height: 85px;
+  width: var(--map-resource);
+  height: var(--map-resource);
   border-radius: 50%;
   border: 5px solid white;
 }

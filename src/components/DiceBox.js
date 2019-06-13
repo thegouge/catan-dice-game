@@ -67,9 +67,9 @@ const DiceBox = ({gatherResources, resetResources, finishTurn}) => {
 
   return (
     <div className="dice-box">
-      <div id="dice-list">{diceElements}</div>
+      <div className="dice-list">{diceElements}</div>
       <br />
-      <div id="toolbox">
+      <div className="toolbox">
         {rolls > 0 && (
           <button id="roll" onClick={rollDice}>
             Roll!
@@ -82,7 +82,7 @@ const DiceBox = ({gatherResources, resetResources, finishTurn}) => {
         )}
       </div>
       {rolls < 3 && (
-        <button id="passTurn" onClick={endTurn}>
+        <button className="passTurn" onClick={endTurn}>
           End Turn
         </button>
       )}

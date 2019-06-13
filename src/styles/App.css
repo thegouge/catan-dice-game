@@ -3,21 +3,21 @@
 
   --player-width: 750px;
 
-  --map-height: 800px;
-  --map-width: calc(var(--map-height) * 0.93869047619);
+  --map-height: calc(var(--player-width) * 1.06667);
+  --map-width: var(--player-width);
 
-  --road-width: 25px;
+  --road-width: calc((var(--player-width) / 30));
   --road-height: calc(var(--road-width) * 3);
 
-  --settlement-square: 30px;
+  --settlement-square: calc(var(--player-width) / 24);
 
-  --city-height: var(--settlement-square);
+  --city-height: calc(var(--player-width) / 25);
   --city-width: calc(var(--city-height) * 2);
 
   --soldier-width: var(--settlement-square);
   --soldier-height: calc(var(--soldier-width) * 1.5);
 
-  --icon-size: 75px;
+  --icon-size: calc(var(--player-width) / 10);
 }
 
 .resource-icon {
@@ -45,7 +45,6 @@
 }
 
 .settlement {
-  display: inline-block;
   height: var(--settlement-square);
   width: var(--settlement-square);
   margin-top: calc(var(--settlement-square) / 2);
@@ -63,7 +62,6 @@
 }
 
 .city {
-  display: inline-block;
   height: var(--city-height);
   width: var(--city-width);
   margin-top: calc(var(--city-height) / 2);

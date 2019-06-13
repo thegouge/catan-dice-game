@@ -3,216 +3,213 @@
   background: black;
   color: white;
   transform: rotate(-30deg);
-  left: 243px;
-  top: 149px;
+  top: 18.6%;
+  left: 32.4%;
 }
 
 #building-1 {
-  left: 277px;
-  top: 155px;
+  top: 19.2%;
+  left: 36.9%;
 }
 
 #building-2 {
   transform: rotate(30deg);
-  left: 242px;
-  top: 170px;
+  top: 21.5%;
+  left: 32.2%;
 }
 
 #building-3 {
   transform: rotate(-90deg);
-  left: 143px;
-  top: 148px;
+  top: 18.75%;
+  left: 19.2%;
 }
 
 #building-4 {
-  top: 83px;
-  left: 37px;
+  top: 10.375%;
+  left: 4.9333%;
 }
 
 #building-5 {
   transform: rotate(-30deg);
-  left: 239px;
-  top: 78px;
+  top: 10.75%;
+  left: 32%;
 }
 
 #building-6 {
-  left: 273px;
-  top: 90px;
+  top: 12.125%;
+  left: 36.533%;
 }
 
 #building-7 {
   transform: rotate(30deg);
-  left: 237px;
-  top: 103px;
+  top: 14%;
+  left: 31.6%;
 }
 
 #building-8 {
   transform: rotate(-90deg);
-
-  left: 137px;
-
-  top: 78px;
+  top: 10.75%;
+  left: 18.4%;
 }
 
 #building-9 {
-  left: 29px;
-
-  top: 10px;
+  top: 2.625%;
+  left: 4.133%;
 }
 
 #building-10 {
   transform: rotate(-30deg);
-  left: 236px;
-  top: 6px;
+  top: 2.375%;
+  left: 31.6%;
 }
 
 #building-11 {
-  left: 279px;
-  top: 18px;
+  top: 3.875%;
+  left: 37.2%;
 }
 
 #building-12 {
   transform: rotate(-90deg);
-  left: 359px;
-  top: -42px;
+  top: -3.375%;
+  left: 48%;
 }
 
 #building-13 {
   transform: rotate(30deg);
-  left: 457px;
-  top: -171px;
+  top: -19.375%;
+  left: 60.933%;
 }
 
 #building-14 {
-  left: 498px;
-  top: -306px;
+  top: -36.375%;
+  left: 66.533%;
 }
 
 #building-15 {
   transform: rotate(-30deg);
-  left: 457px;
-  top: -443px;
+  top: -53.125%;
+  left: 61.2%;
 }
 
 #building-16 {
   transform: rotate(30deg);
-  left: 454px;
-  top: -626px;
+  top: -76.125%;
+  left: 60.533%;
 }
 
 #building-17 {
-  left: 489px;
-  top: -758px;
+  top: -92.625%;
+  left: 65.33%;
 }
 
 #building-18 {
   transform: rotate(-30deg);
-  left: 458px;
-  top: -895px;
+  top: -109.5%;
+  left: 61.067%;
 }
 
 #building-19 {
   transform: rotate(30deg);
-  left: 461px;
-  top: -1077px;
+  top: -132.25%;
+  left: 61.6%;
 }
 
 #building-20 {
-  left: 496px;
-  top: -1208px;
+  top: -148.75%;
+  left: 66.267%;
 }
 
 #building-21 {
   transform: rotate(-90deg);
-  left: 580px;
-  top: -766px;
+  top: -93.25%;
+  left: 77.733%;
 }
 
 #building-22 {
   transform: rotate(30deg);
-  left: 668px;
-  top: -894px;
+  top: -109%;
+  left: 89.467%;
 }
 
 #building-23 {
-  left: 684px;
-  top: -1028px;
+  top: -125.625%;
+  left: 91.2%;
 }
 
 #building-24 {
   transform: rotate(-30deg);
-  left: 670px;
-  top: -1164px;
+  top: -142.375%;
+  left: 89.467%;
 }
 
 #building-25 {
   transform: rotate(30deg);
-  left: 668px;
-  top: -1347px;
+  top: -165.25%;
+  left: 89.467%;
 }
 
 #building-26 {
-  left: 683px;
-  top: -1480px;
+  top: -181.625%;
+  left: 91.067%;
 }
 
 #building-27 {
-  top: -1589px;
-  left: 144px;
+  top: -195.125%;
+  left: 19.067%;
 }
 
 #building-28 {
-  left: 141px;
-  top: -1388px;
+  top: -170%;
+  left: 18.667%;
 }
 
 #building-29 {
-  left: 352px;
-  top: -1302px;
+  top: -159.25%;
+  left: 46.93%;
 }
 
 #building-30 {
-  left: 571px;
-  top: -1467px;
+  top: -180.875%;
+  left: 76.2667%;
 }
 
 #building-31 {
-  top: -1762px;
-  left: 568px;
+  top: -217.625%;
+  left: 75.867%;
 }
 
 #building-32 {
-  top: -1937px;
-  left: 359px;
+  top: -239.5%;
+  left: 47.867%;
 }
 
 #wood-circle {
-  left: 539px;
-  top: -1561px;
+  top: -193.125%;
+  left: 71.867%;
 }
 
 #brick-circle {
-  left: 441px;
-  top: -1812px;
+  top: -236%;
+  left: 71.867%;
 }
 
 #wool-circle {
-  left: 130px;
-  top: -1440px;
+  top: -201.125%;
+  left: 42.5%;
 }
 
 #wheat-circle {
-  left: -177px;
-  top: -1571px;
+  top: -229.75%;
+  left: 14.533%;
 }
 
 #ore-circle {
-  left: -270px;
-  top: -1817px;
+  top: -272.375%;
+  left: 14.533%;
 }
 
 #gold-circle {
   background-color: var(--gold-color);
-  left: -149px;
-  top: -1942px;
+  top: -299.5%;
+  left: 42.5%;
 }
