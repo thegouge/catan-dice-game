@@ -1,6 +1,8 @@
 :root {
   --gold-color: rgb(175, 141, 39);
 
+  --player-width: 750px;
+
   --map-height: 800px;
   --map-width: calc(var(--map-height) * 0.93869047619);
 

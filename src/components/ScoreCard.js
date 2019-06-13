@@ -12,7 +12,7 @@ const ScoreCard = ({rounds, playerTotal}) => {
   });
 
   return (
-    <div id="score-card">
+    <div className="score-card">
       {roundBoxes}
       <div className="round-box total">Total = {playerTotal}</div>
     </div>

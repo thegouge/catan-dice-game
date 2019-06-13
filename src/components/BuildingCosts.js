@@ -9,7 +9,7 @@ const BuildingCosts = () => {
     const resourceList = building.resources.map((resource, index) => (
       <img
         key={index}
-        className="resource-icon"
+        className="resource-icon cost"
         src={resource.imageRoute}
         alt={resource.name}
       />
@@ -18,7 +18,7 @@ const BuildingCosts = () => {
     return (
       <div key={i} className="cost-box">
         <div className="name">
-          <div className={building.name} />
+          <div className={building.name + " cost"} />
         </div>
         {resourceList}
       </div>

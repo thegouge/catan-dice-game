@@ -3,7 +3,8 @@
 }
 
 .player {
-  width: 750px;
+  background: black;
+  width: var(--player-width);
   margin-top: 50px;
   margin-left: 100px;
 }

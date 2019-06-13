@@ -9,11 +9,8 @@ header h2 {
 }
 
 .header-content {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-bottom: 10px;
-}
-
-app-building-costs {
-  width: 360px;
 }
