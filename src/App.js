@@ -10,7 +10,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Player />
+        <Player island={1} />
       </div>
     </Provider>
   );

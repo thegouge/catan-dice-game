@@ -6,10 +6,11 @@ export class Resource {
 }
 
 export class Building {
-  constructor(id, type, pointValue) {
+  constructor(id, type, pointValue, previousRoad = 0) {
     this.id = id;
     this.pointValue = pointValue;
     this.built = false;
+    this.previousRoad = previousRoad;
     this.type = type;
     switch (type) {
       case "road":
@@ -29,12 +30,8 @@ export class Building {
         this.buildingCosts = {wheat: 2, ore: 3};
         break;
 
-      case "start":
-        this.built = true;
-        this.buildingCosts = {};
-        break;
-
       default:
+        this.built = true;
         this.buildingCosts = {};
         break;
     }
@@ -45,6 +42,42 @@ export class Building {
     console.log(`building a ${this.type}`);
   }
 }
+
+export const BuildingList = [
+  new Building(0, "start", 0),
+  new Building(1, "settlement", 3),
+  new Building(2, "road", 1),
+  new Building(3, "road", 1, 2),
+  new Building(4, "city", 7, 3),
+  new Building(5, "road", 1, 2),
+  new Building(6, "settlement", 4, 5),
+  new Building(7, "road", 1, 5),
+  new Building(8, "road", 1, 7),
+  new Building(9, "city", 12, 8),
+  new Building(10, "road", 1, 7),
+  new Building(11, "settlement", 5, 10),
+  new Building(12, "road", 1, 10),
+  new Building(13, "road", 1, 12),
+  new Building(14, "settlement", 7, 13),
+  new Building(15, "road", 1, 13),
+  new Building(16, "road", 1, 15),
+  new Building(17, "settlement", 9, 16),
+  new Building(18, "road", 1, 16),
+  new Building(19, "road", 1, 18),
+  new Building(20, "settlement", 11, 18),
+  new Building(21, "road", 1, 13),
+  new Building(22, "road", 1, 21),
+  new Building(23, "city", 20, 22),
+  new Building(24, "road", 1, 22),
+  new Building(25, "road", 1, 24),
+  new Building(26, "city", 30, 25),
+  new Building(27, "soldier", 1),
+  new Building(28, "soldier", 2, 27),
+  new Building(29, "soldier", 3, 28),
+  new Building(30, "soldier", 4, 29),
+  new Building(31, "soldier", 5, 30),
+  new Building(32, "soldier", 6, 31),
+];
 
 export class ResourcePool {
   wood = 0;

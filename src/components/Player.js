@@ -29,9 +29,27 @@ class Player extends React.Component {
   };
 
   gatherResources = (resourceList) => {
+    const resourcesToAdd = {
+      wood: 0,
+      brick: 0,
+      wool: 0,
+      wheat: 0,
+      ore: 0,
+      gold: 0,
+    };
     resourceList.forEach((rolledResource) => {
-      this.state.currentResources.updateResource(rolledResource, 1);
+      resourcesToAdd[rolledResource] = resourcesToAdd[rolledResource] + 1;
     });
+    this.setState({
+      currentResources: Object.assign(this.state.currentResources, {
+        ...resourcesToAdd,
+      }),
+    });
+
+    this.updateBuildable();
+  };
+
+  updateBuildable = () => {
     const {wood, brick, wool, wheat, ore} = this.state.currentResources;
     // const wild = Math.floor(currentResources.gold / 2);
     this.setState({
@@ -44,6 +62,7 @@ class Player extends React.Component {
         },
       }),
     });
+    console.log(this.state.currentResources);
   };
 
   resetResources = () => {
@@ -52,17 +71,25 @@ class Player extends React.Component {
     });
   };
 
-  scoreBuilding = (buildingScore) => {
+  scoreBuilding = (building) => {
+    const newResources = {...this.state.currentResources};
+    for (let resource in building.buildingCosts) {
+      newResources[resource] =
+        newResources[resource] - building.buildingCosts[resource];
+    }
     this.setState({
       rounds: this.state.rounds.map((round, i) => {
-        if (i === this.state.currentRoundIndex) return (round += buildingScore);
+        if (i === this.state.currentRoundIndex)
+          return (round += building.pointValue);
         else return round;
       }),
       playerTotal: this.state.rounds.reduce(
         (runningTotal, roundScore) => runningTotal + roundScore,
-        buildingScore
+        building.pointValue
       ),
+      currentResources: newResources,
     });
+    this.updateBuildable();
   };
 
   endTurn = () => {
@@ -81,6 +108,7 @@ class Player extends React.Component {
         />
 
         <IslandMap
+          island={this.props.island}
           currentResources={this.state.currentResources}
           scoreBuilding={this.scoreBuilding}
         />
