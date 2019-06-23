@@ -27,6 +27,7 @@ class Player extends React.Component {
     currentRoundIndex: 0,
     currentResources: new ResourcePool(),
     buildingPhase: false,
+    // soldierResources: {}
   };
 
   gatherResources = (resourceList) => {
