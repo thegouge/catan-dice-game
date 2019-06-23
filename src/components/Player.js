@@ -43,26 +43,20 @@ class Player extends React.Component {
     this.setState({
       currentResources: Object.assign(this.state.currentResources, {
         ...resourcesToAdd,
+        structures: this.updateBuildable(resourcesToAdd),
       }),
     });
-
-    this.updateBuildable();
   };
 
-  updateBuildable = () => {
-    const {wood, brick, wool, wheat, ore} = this.state.currentResources;
+  updateBuildable = (resources) => {
+    const {wood, brick, wool, wheat, ore} = resources;
     // const wild = Math.floor(currentResources.gold / 2);
-    this.setState({
-      currentResources: Object.assign(this.state.currentResources, {
-        structures: {
-          road: wood >= 1 && brick >= 1,
-          soldier: wool >= 1 && wheat >= 1 && ore >= 1,
-          settlement: wood >= 1 && brick >= 1 && wool >= 1 && wheat >= 1,
-          city: wheat >= 2 && ore >= 3,
-        },
-      }),
-    });
-    console.log(this.state.currentResources);
+    return {
+      road: wood >= 1 && brick >= 1,
+      soldier: wool >= 1 && wheat >= 1 && ore >= 1,
+      settlement: wood >= 1 && brick >= 1 && wool >= 1 && wheat >= 1,
+      city: wheat >= 2 && ore >= 3,
+    };
   };
 
   resetResources = () => {
@@ -72,10 +66,11 @@ class Player extends React.Component {
   };
 
   scoreBuilding = (building) => {
-    const newResources = {...this.state.currentResources};
+    const newResources = {};
     for (let resource in building.buildingCosts) {
       newResources[resource] =
-        newResources[resource] - building.buildingCosts[resource];
+        this.state.currentResources[resource] -
+        building.buildingCosts[resource];
     }
     this.setState({
       rounds: this.state.rounds.map((round, i) => {
@@ -87,9 +82,12 @@ class Player extends React.Component {
         (runningTotal, roundScore) => runningTotal + roundScore,
         building.pointValue
       ),
-      currentResources: newResources,
+      currentResources: {
+        ...newResources,
+        structures: this.updateBuildable(newResources),
+      },
     });
-    this.updateBuildable();
+    console.log(this.state.currentResources);
   };
 
   endTurn = () => {
