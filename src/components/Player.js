@@ -26,6 +26,7 @@ class Player extends React.Component {
     playerTotal: 0,
     currentRoundIndex: 0,
     currentResources: new ResourcePool(),
+    buildingPhase: false,
   };
 
   gatherResources = (resourceList) => {
@@ -73,6 +74,7 @@ class Player extends React.Component {
         building.buildingCosts[resource];
     }
     this.setState({
+      buildingPhase: true,
       rounds: this.state.rounds.map((round, i) => {
         if (i === this.state.currentRoundIndex)
           return (round += building.pointValue);
@@ -94,6 +96,7 @@ class Player extends React.Component {
     this.setState({
       currentRoundIndex: this.state.currentRoundIndex + 1,
       currentResources: new ResourcePool(),
+      buildingPhase: false,
     });
   };
 
@@ -115,6 +118,7 @@ class Player extends React.Component {
           gatherResources={this.gatherResources}
           resetResources={this.resetResources}
           finishTurn={this.endTurn}
+          buildingPhase={this.state.buildingPhase}
         />
       </div>
     );

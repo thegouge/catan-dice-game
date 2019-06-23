@@ -1,10 +1,15 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import {Die} from "../exports";
 
 import "../styles/dice-box.css";
 
-const DiceBox = ({gatherResources, resetResources, finishTurn}) => {
+const DiceBox = ({
+  gatherResources,
+  resetResources,
+  finishTurn,
+  buildingPhase,
+}) => {
   const [dice, setDice] = useState([
     new Die(0),
     new Die(1),
@@ -15,6 +20,10 @@ const DiceBox = ({gatherResources, resetResources, finishTurn}) => {
   ]);
 
   const [rolls, setRolls] = useState(3);
+
+  useEffect(() => {
+    if (buildingPhase) setRolls(0);
+  }, [buildingPhase]);
 
   const rollDice = () => {
     resetResources();
