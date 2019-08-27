@@ -1,10 +1,10 @@
 import React from "react";
 
-import BuildingCosts from "./BuildingCosts";
-import ScoreCard from "./ScoreCard.js";
-import OtherScores from "./OtherScores";
+import BuildingCosts from "../BuildingCosts";
+import ScoreCard from "../ScoreCard";
+import OtherScores from "../OtherScores";
 
-import "../styles/header.css";
+import "./header.css";
 
 const Header = ({rounds, playerTotal}) => {
   const playerName = "Alex";

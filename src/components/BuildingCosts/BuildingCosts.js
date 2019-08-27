@@ -1,8 +1,8 @@
 import React from "react";
 
-import {buildingCosts} from "../exports";
+import {buildingCosts} from "../../exports";
 
-import "../styles/building-costs.css";
+import "./building-costs.css";
 
 const BuildingCosts = () => {
   const renderedCosts = buildingCosts.map((building, i) => {

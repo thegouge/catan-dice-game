@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/victory-screen.css";
+import "./victory-screen.css";
 
 const VictoryScreen = () => {
   const victor = "Nobody";

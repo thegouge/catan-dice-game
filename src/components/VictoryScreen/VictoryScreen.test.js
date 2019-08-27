@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import VictoryScreen from "../components/VictoryScreen";
+import VictoryScreen from "./index";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");

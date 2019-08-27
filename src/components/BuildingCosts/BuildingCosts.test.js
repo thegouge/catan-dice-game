@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import OpeningForm from "../components/OpeningForm";
+import BuildingCosts from "./index";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<OpeningForm />, div);
+  ReactDOM.render(<BuildingCosts />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

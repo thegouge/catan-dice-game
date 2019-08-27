@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Header from "../components/Header";
-
-const rounds = new Array(16).fill(0);
+import Player from "./index";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<Header rounds={rounds} playerTotal={0} />, div);
+  ReactDOM.render(<Player />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

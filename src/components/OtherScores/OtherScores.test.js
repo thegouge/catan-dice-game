@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import DiceBox from "../components/DiceBox";
+import OtherScores from "./index";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<DiceBox />, div);
+  ReactDOM.render(<OtherScores />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

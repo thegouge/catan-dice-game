@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 
-import {Die} from "../exports";
+import {Die} from "../../exports";
 
-import "../styles/dice-box.css";
+import "./dice-box.css";
 
 const DiceBox = ({
   gatherResources,

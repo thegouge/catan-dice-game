@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/score-card.css";
+import "./score-card.css";
 
 const ScoreCard = ({rounds, playerTotal}) => {
   const roundBoxes = rounds.map((round, i) => {

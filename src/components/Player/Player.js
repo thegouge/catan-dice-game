@@ -1,14 +1,14 @@
 import React from "react";
 // import {connect} from "react-redux";
 
-import {ResourcePool} from "../exports";
+import {ResourcePool} from "../../exports";
 // import {scoreRound, endTurn} from "../redux/actions/creators";
 
-import Header from "./Header";
-import IslandMap from "./IslandMap";
-import DiceBox from "./DiceBox";
+import Header from "../Header";
+import IslandMap from "../IslandMap";
+import DiceBox from "../DiceBox";
 
-import "../styles/player.css";
+import "./player.css";
 
 // const mapStateToProps = (state) => {
 //   return {...state};

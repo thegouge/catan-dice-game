@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 
-import {resourceList, BuildingList} from "../exports";
+import {resourceList, BuildingList} from "../../exports";
 
-import "../styles/positioning.css";
-import "../styles/island-map.css";
+import "./positioning.css";
+import "./island-map.css";
 
 const IslandMap = (props) => {
   // STATE
